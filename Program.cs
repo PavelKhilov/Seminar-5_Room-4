@@ -51,7 +51,7 @@ int[] Reverse (int[] array)
         array[i] *= -1;
     return array;
 }
-
+/*
 Console.Write("Input number elements: ");
 int lenght = Convert.ToInt32(Console.ReadLine());
 Console.Write("Input a min psible value: ");
@@ -63,3 +63,29 @@ int[] myArray = CreateRandomArray(lenght, min, max);
 ShowArray(myArray);
 int[] newArray = Reverse(myArray);
 ShowArray(newArray);
+*/
+// Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве.
+bool FindNumber (int[] array, int N)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i] == N)
+            return true; 
+    }
+    return false;
+}
+
+Console.Write("Input number elements: ");
+int lenght = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a min psible value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input a max psible value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input find number N = ");
+int N = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreateRandomArray(lenght, min, max);
+ShowArray(myArray);
+
+bool result = FindNumber (myArray, N);
+Console.Write($"The find number N - {result}");
